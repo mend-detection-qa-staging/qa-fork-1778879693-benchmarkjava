@@ -1,0 +1,113 @@
+{
+  "description": "Autotest configuration file for reachability detection validation",
+  "version": 1.5,
+  "base_config": {
+    "validate_reachability": true,
+    "reachability": {
+      "check_reachability_status": true,
+      "_comment_check_reachability_status": "Verify that reachability analysis was performed",
+      "expected_reachable_libraries": {
+        "contains": [
+          {
+            "library_name": "mina-core-2.0.0-RC1.jar",
+            "vulnerabilities": ["CVE-2024-52046", "CVE-2019-0231"]
+          },
+          {
+            "library_name": "log4j-1.2.17.jar",
+            "vulnerabilities": ["CVE-2022-23305", "CVE-2022-23302", "CVE-2021-4104", "CVE-2020-9488"]
+          },
+          {
+            "library_name": "spring-web-4.3.30.RELEASE.jar",
+            "vulnerabilities": ["CVE-2016-1000027", "CVE-2024-38828", "CVE-2024-38809", "CVE-2024-38820"]
+          },
+          {
+            "library_name": "commons-fileupload-1.3.3.jar",
+            "vulnerabilities": ["WS-2014-0034"]
+          },
+          {
+            "library_name": "spring-core-4.3.30.RELEASE.jar",
+            "vulnerabilities": ["CVE-2025-41249", "CVE-2024-38828"]
+          },
+          {
+            "library_name": "dom4j-1.6.1.jar",
+            "vulnerabilities": ["CVE-2018-1000632"]
+          },
+          {
+            "library_name": "hibernate-core-3.6.10.Final.jar",
+            "vulnerabilities": ["CVE-2019-14900"]
+          },
+          {
+            "library_name": "commons-io-2.6.jar",
+            "vulnerabilities": ["CVE-2021-29425"]
+          },
+          {
+            "library_name": "spring-context-4.3.30.RELEASE.jar",
+            "vulnerabilities": ["CVE-2025-22233"]
+          },
+          {
+            "library_name": "jquery-2.1.4.min.js",
+            "vulnerabilities": ["CVE-2020-11023", "CVE-2020-11022", "CVE-2019-11358", "CVE-2015-9251"]
+          },
+          {
+            "library_name": "jquery-1.11.3.min.js",
+            "vulnerabilities": ["CVE-2020-11023", "CVE-2020-11022", "CVE-2019-11358", "CVE-2015-9251"]
+          },
+          {
+            "library_name": "bootstrap-3.3.4.min.js",
+            "vulnerabilities": ["CVE-2019-8331", "CVE-2018-20677", "CVE-2018-20676", "CVE-2018-14042", "CVE-2018-14040", "CVE-2016-10735"]
+          },
+          {
+            "library_name": "bootstrap-3.3.4.js",
+            "vulnerabilities": ["CVE-2019-8331", "CVE-2018-20677", "CVE-2018-20676", "CVE-2018-14042", "CVE-2018-14040", "CVE-2016-10735"]
+          }
+        ]
+      },
+      "_comment_expected_reachable_libraries": "Expected REACHABLE libraries - Java/JavaScript dependencies",
+      "expected_unreachable_libraries": {
+        "contains": [
+          {
+            "library_name": "spring-webmvc-4.3.30.RELEASE.jar",
+            "vulnerabilities": ["CVE-2022-22965", "CVE-2024-38819"]
+          },
+          {
+            "library_name": "spring-beans-4.3.30.RELEASE.jar",
+            "vulnerabilities": ["CVE-2022-22965"]
+          },
+          {
+            "library_name": "log4j-1.2.17.jar",
+            "vulnerabilities": ["CVE-2020-9493", "CVE-2019-17571", "CVE-2022-23307", "CVE-2025-041125"]
+          },
+          {
+            "library_name": "hsqldb-2.3.6.jar",
+            "vulnerabilities": ["CVE-2022-41853"]
+          },
+          {
+            "library_name": "bcprov-jdk15on-1.70.jar",
+            "vulnerabilities": ["CVE-2023-33201"]
+          },
+          {
+            "library_name": "spring-core-4.3.30.RELEASE.jar",
+            "vulnerabilities": ["CVE-2022-22970", "CVE-2018-1257", "CVE-2018-1271"]
+          },
+          {
+            "library_name": "commons-io-2.6.jar",
+            "vulnerabilities": ["CVE-2024-47554"]
+          },
+          {
+            "library_name": "spring-expression-4.3.30.RELEASE.jar",
+            "vulnerabilities": ["CVE-2024-38808"]
+          },
+          {
+            "library_name": "spring-web-4.3.30.RELEASE.jar",
+            "vulnerabilities": ["CVE-2024-22259", "CVE-2024-22243", "CVE-2021-22096"]
+          }
+        ]
+      },
+      "_comment_expected_unreachable_libraries": "Expected UNREACHABLE libraries - vulnerabilities not exploitable in current code paths",
+      "expected_total_reachable_count": { "gte": 16 },
+      "_comment_expected_total_reachable_count": "Minimum number of reachable CVEs expected (16 reachable vulnerabilities found)",
+      "expected_total_unreachable_count": { "gte": 39 },
+      "_comment_expected_total_unreachable_count": "Expected number of unreachable CVEs (39 unreachable vulnerabilities found)"
+    }
+  }
+}
